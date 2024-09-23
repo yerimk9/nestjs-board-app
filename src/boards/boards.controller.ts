@@ -39,7 +39,7 @@ export class BoardsController {
   @Patch('/:id/status')
   updateBoardStatus(
     @Param('id', ParseIntPipe) id: number,
-    @Body('status', BoardStatusValidationPipe) status: BoardStatus,
+    @Body('status', BoardStatusValidationPipe) status: BoardStatus, // @Body('status')는 클라이언트로부터 들어온 요청의 Body에서 status 필드를 찾아 그 값을 BoardStatusValidationPipe에 전달
   ) {
     return this.boardsService.updateBoardStatus(id, status);
   }

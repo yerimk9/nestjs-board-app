@@ -4,6 +4,7 @@ import { BoardStatus } from '../board-status.enum';
 export class BoardStatusValidationPipe implements PipeTransform {
   readonly StatusOptions = [BoardStatus.PRIVATE, BoardStatus.PUBLIC];
 
+  // transform : 입력값을 받아서 변환(또는 검증)한 뒤 반환합니다.
   transform(value: any) {
     value = value.toUpperCase();
 
